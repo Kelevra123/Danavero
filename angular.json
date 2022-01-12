@@ -1,0 +1,127 @@
+{
+  "version": 1,
+  "projects": {
+    "danavero": {
+      "projectType": "application",
+      "root": "apps/danavero",
+      "sourceRoot": "apps/danavero/src",
+      "prefix": "danaveo",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "outputs": ["{options.outputPath}"],
+          "options": {
+            "outputPath": "dist/apps/danavero",
+            "index": "apps/danavero/src/index.html",
+            "main": "apps/danavero/src/main.ts",
+            "polyfills": "apps/danavero/src/polyfills.ts",
+            "tsConfig": "apps/danavero/tsconfig.app.json",
+            "inlineStyleLanguage": "scss",
+            "assets": [
+              "apps/danavero/src/favicon.ico",
+              "apps/danavero/src/assets"
+            ],
+            "styles": ["apps/danavero/src/styles.scss"],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kb",
+                  "maximumError": "1mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "2kb",
+                  "maximumError": "4kb"
+                }
+              ],
+              "fileReplacements": [
+                {
+                  "replace": "apps/danavero/src/environments/environment.ts",
+                  "with": "apps/danavero/src/environments/environment.prod.ts"
+                }
+              ],
+              "outputHashing": "all"
+            },
+            "development": {
+              "buildOptimizer": false,
+              "optimization": false,
+              "vendorChunk": true,
+              "extractLicenses": false,
+              "sourceMap": true,
+              "namedChunks": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "configurations": {
+            "production": {
+              "browserTarget": "danavero:build:production"
+            },
+            "development": {
+              "browserTarget": "danavero:build:development"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "danavero:build"
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "apps/danavero/src/**/*.ts",
+              "apps/danavero/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/apps/danavero"],
+          "options": {
+            "jestConfig": "apps/danavero/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      },
+      "tags": []
+    },
+    "danavero-e2e": {
+      "root": "apps/danavero-e2e",
+      "sourceRoot": "apps/danavero-e2e/src",
+      "projectType": "application",
+      "architect": {
+        "e2e": {
+          "builder": "@nrwl/cypress:cypress",
+          "options": {
+            "cypressConfig": "apps/danavero-e2e/cypress.json",
+            "devServerTarget": "danavero:serve:development"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "danavero:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "outputs": ["{options.outputFile}"],
+          "options": {
+            "lintFilePatterns": ["apps/danavero-e2e/**/*.{js,ts}"]
+          }
+        }
+      },
+      "tags": [],
+      "implicitDependencies": ["danavero"]
+    }
+  }
+}
