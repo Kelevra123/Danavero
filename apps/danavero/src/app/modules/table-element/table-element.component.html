@@ -1,0 +1,7 @@
+<div *ngIf="element" class="table-element__container">
+  <div class="table-element__wrapper" (click)="redirect()">
+    <img class="table-element__logo" src="{{element.avatar_url}}">
+    <div class="table-element__author">{{element.login}}</div>
+    <div class="table-element__link">{{element.html_url}}</div>
+  </div>
+</div>

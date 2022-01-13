@@ -1,0 +1,39 @@
+.block-element {
+
+  &__container {
+    &:hover {
+      cursor: pointer;
+      background-color: #E6E6FA;
+      transition: 0.3s;
+    }
+  }
+
+  &__logo {
+    max-width: 50px;
+    max-height: 50px;
+    text-decoration: none;
+
+    @media (max-width: 736px) {
+      max-width: 100px;
+      max-height: 100px;
+    }
+  }
+
+  &__link {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__description {
+    padding: 5px 0;
+    text-decoration: underline;
+  }
+
+  &__author {
+    padding: 5px 0;
+  }
+
+}

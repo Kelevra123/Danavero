@@ -1,0 +1,21 @@
+<div class="wrapper__container" [class.d-flex]="!switch">
+  <div class="wrapper__top">
+    <div class="wrapper__search">
+      <img src="../../assets/icons/free-icon-table-930208.png" class="wrapper__control" (click)="onSwitch(true)">
+      <img  src="../../assets/icons/premium-icon-tiles-1624142.png" class="wrapper__control" (click)="onSwitch(false)">
+      <input type="text" class="wrapper__field" placeholder="Введите запрос" (change)="onChangeValue($event)">
+      <button class="wrapper__button" (click)="onSearch()">🔍</button>
+    </div>
+  </div>
+  <div class="wrapper__content" [class.h-85]="!switch">
+    <div class="wrapper__content_container">
+      <div class="wrapper__content_inner">
+        <div *ngIf="!switch" class="blocks" [content]="$tableContent | async"></div>
+        <div *ngIf="switch" class="table" [content]="$tableContent | async"></div>
+      </div>
+    </div>
+  </div>
+  <div class="wrapper__bottom" [class.dn]="switch" ></div>
+
+</div>
+

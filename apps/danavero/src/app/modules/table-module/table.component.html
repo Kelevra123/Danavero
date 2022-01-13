@@ -1,0 +1,8 @@
+<div class="table__container">
+  <div class="table__wrapper" *ngFor="let element of content">
+    <div class="table-element" [element]="element"></div>
+  </div>
+</div>
+
+<div *ngIf="!content">Вы делаете слишком много запросов или просто балуетесь))) Сервер ушел на перекур попробуйте снова через 1 минуту повторить запрос)</div>
+<!-- Я не стал делать проверку статуса ответа сервера, дабавил вот этот блочек -->

@@ -1,0 +1,18 @@
+<div class="detail-element__container" *ngIf="userInfo">
+  <div class="detail-element__wrapper">
+    <img class="detail-element__logo" src="{{userInfo.avatar_url}}" alt="">
+    <div class="detail-element__info">
+      <div class="detail-element__item"><span>name:</span><span class="detail-element__text">{{userInfo.name}}</span></div>
+      <div class="detail-element__item"><span>email:</span><span class="detail-element__text">{{userInfo.email}}</span></div>
+      <div class="detail-element__item"><span>bio:</span><span class="detail-element__text">{{userInfo.bio}}</span></div>
+      <div class="detail-element__item"><span>company:</span><span class="detail-element__text">{{userInfo.company}}</span></div>
+      <div class="detail-element__item"><span>blog:</span><span class="detail-element__text">{{userInfo.blog}}</span></div>
+      <div class="detail-element__item"><span>link:</span><span class="detail-element__text">{{userInfo.html_url}}</span></div>
+      <div class="detail-element__item"><span>location:</span><span class="detail-element__text">{{userInfo.location}}</span></div>
+      <div class="detail-element__item"><span>login:</span><span class="detail-element__text">{{userInfo.login}}</span></div>
+      <div class="detail-element__item"><span>company:</span><span class="detail-element__text">{{userInfo.company}}</span></div>
+
+    </div>
+  </div>
+</div>
+

@@ -1,0 +1,10 @@
+<div *ngIf="element" class="block-element__container">
+  <div class="block-element__card">
+    <a (click)='redirect()' class="block-element__link">
+      <img class="block-element__logo" src='{{element.avatar_url}}'>
+<!--      <div class="block-element__title"></div>-->
+      <div class="block-element__author">{{element.login}}</div>
+      <a class="block-element__description">{{element.html_url}}</a>
+    </a>
+  </div>
+</div>

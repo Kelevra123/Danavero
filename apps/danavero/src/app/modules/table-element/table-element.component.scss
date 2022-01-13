@@ -1,0 +1,27 @@
+.table-element {
+
+  &__container {
+    &:hover {
+      cursor: pointer;
+      background-color: #E6E6FA;
+      transition: 0.3s;
+    }
+  }
+
+  &__wrapper {
+    //display: flex;
+    justify-content: space-between;
+    margin: 15px 0;
+    border-bottom: 1px solid;
+    align-items: center;
+
+    @media (min-width: 450px) {
+      display: flex;
+    }
+  }
+
+  &__logo {
+    max-height: 50px;
+  }
+
+}
